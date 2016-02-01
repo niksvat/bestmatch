@@ -1,0 +1,131 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        
+        
+        <link href="css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="css/bootstrap-theme.min.css" rel="stylesheet"/>
+        <link href="css/styles.css" rel="stylesheet"/>
+        <style>  
+body {  
+background-image: url("index.jpg");  
+margin-left:100px;  
+ background-repeat: no-repeat; 
+}  
+#left{  
+    position: absolute;  
+    left: 900px;  
+    top: 20px; 
+}
+#right{  
+    position: absolute;  
+    left: 900px;  
+    top: 260px; 
+}
+#niks{
+    position: absolute;
+    left: 0px;
+    top: 770px;
+        
+}
+</style> 
+        <title>BestMatch</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script>
+            function validateform(){
+                
+                var name = document.signup.name.value;
+                var pass = document.signup.password.value;
+                var cpass = document.signup.confirmpassword.value;
+                var rollno = document.signup.roll.value;
+                var email = document.signup.email.value;
+                
+                var atpos = email.indexOf("@");
+                var dotpos = email.lastIndexOf(".");
+                
+                if(rollno==null||rollno==""){
+                    alert("[Roll no. should not be empty]");
+                    return false;
+                }
+                
+                else if(name==null||name==""){
+                    alert("[Name Field should not be empty]");
+                    return false;
+                }
+                else if(atpos<1||dotpos<atpos){
+                    alert("[Please enter valid email]");
+                    return false;
+                }
+                else if(pass!=cpass){
+                    alert("[Password and confirm password not mathched]");
+                    return false;
+                }
+                
+            }
+            
+            
+        </script>
+    </head>
+    <body>
+        <div id="left"> <font face="Verdana" size="5">LogIN</font>
+        
+            <form action="login" method="post">
+    <fieldset>
+        <div class="form-group">
+            RollNo:<input autofocus class="form-control" name="roll" placeholder="Username" type="text"/>
+        </div>
+        <div class="form-group">
+            Password:<input class="form-control" name="password" placeholder="Password" type="password"/>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-default">Log In</button>
+        </div>
+    </fieldset>
+           </form>
+        
+            <div id="niks">creater-[ <a href="https://www.facebook.com/nikuvat">https://www.facebook.com/nikuvat</a> ]</div>
+        
+        
+        </div>
+        <div id="right"><font face="Verdana" size="5">OR SignUP</font>
+        
+        <form action="register" method="post" name="signup" onsubmit="return validateform()">
+    <fieldset>
+        <div class="form-group">
+            RollNo:<input autofocus class="form-control" name="roll" placeholder="Username" type="text"/>
+        </div>
+        <div class="form-group">
+            Email:<input autofocus class="form-control" name="email" placeholder="Username" type="text"/>
+        </div>
+        <div class="form-group">
+            Name:<input autofocus class="form-control" name="name" placeholder="Username" type="text"/>
+        </div>
+        <div class="form-group">
+            Department(with section) and Year:<input autofocus class="form-control" name="department" placeholder="Username" type="text"/>
+        </div>
+        
+        
+        <div class="form-group">
+            Password<input class="form-control" name="password" placeholder="Password" type="password"/>
+        </div>
+        <div class="form-group">
+            Confirm Password<input class="form-control" name="confirmpassword" placeholder="Password" type="password"/>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-default">Register</button>
+        </div>
+    </fieldset>
+           </form>
+        
+        
+        
+        
+        
+        </div>
+    </body>
+</html>
